@@ -4,6 +4,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { phone, link, question } = body;
+    console.log('Incoming submission:', { phone, link, question });
 
     // Google Apps Script Web App URL (User needs to replace this after deploying the GAS code)
     const GAS_URL = process.env.GAS_WEBAPP_URL || '';
@@ -18,18 +19,20 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ phone, link, question }),
-      redirect: 'follow', // Ensure redirects are followed
+      redirect: 'follow',
     });
+
+    console.log('GAS Response Status:', response.status);
 
     const contentType = response.headers.get('content-type');
     if (contentType && contentType.includes('application/json')) {
       const result = await response.json();
+      console.log('GAS Response Data:', result);
       return NextResponse.json(result);
     } else {
       const text = await response.text();
-      console.error('GAS returned non-JSON response:', text.substring(0, 200));
+      console.log('GAS Response Text (first 100 chars):', text.substring(0, 100));
       
-      // If it's a success but returned as text/html (common with GAS sometimes)
       if (text.includes('success')) {
         return NextResponse.json({ status: 'success' });
       }
