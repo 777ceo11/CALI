@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { phone, link } = body;
+    const { phone, link, question } = body;
 
     // Google Apps Script Web App URL (User needs to replace this after deploying the GAS code)
     const GAS_URL = process.env.GAS_WEBAPP_URL || '';
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ phone, link }),
+      body: JSON.stringify({ phone, link, question }),
       redirect: 'follow', // Ensure redirects are followed
     });
 
