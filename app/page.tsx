@@ -87,8 +87,9 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             CLAI: <span className="text-primary">Car Link AI</span>
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
-            Intelligent used car analysis at your fingertips. Get deep insights before you buy.
+          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            중고차 더이상 고민하지 마세요!<br/>
+            관심 있는 중고차 매물 링크를 첨부해주시면 24시간 이내에 AI가 알기 쉽게 분석해드려요.
           </p>
         </div>
 
@@ -155,14 +156,7 @@ export default function Home() {
             <h2 className="text-xl font-bold mb-4 text-primary">이용 방법</h2>
             <p className="text-zinc-400 text-lg">
               관심 있는 중고차 매물 링크 접수 <span className="mx-2 text-primary">→</span> 
-              24시간 이내 분석된 리포트가 입력하신 전화번호로 전송 (카톡)
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">중고차 더이상 고민하지 마세요!</h2>
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              관심 있는 중고차 매물 링크를 첨부해주시면 24시간 이내에 AI가 알기 쉽게 분석해드려요.
+              24시간 이내 분석된 리포트가 입력한 전화번호로 전송 (카톡)
             </p>
           </div>
         </div>
@@ -174,24 +168,24 @@ export default function Home() {
           <details className="group bg-white/[0.03] border border-white/5 rounded-2xl overflow-hidden">
             <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/[0.05] transition-colors">
               <span className="font-bold">
-                <span className="text-primary mr-3">01.</span> 우리가 누구인가?
+                <span className="text-primary mr-3">01.</span> 우리는 누구인가요?
               </span>
               <svg className="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div className="p-6 pt-0 text-zinc-400 leading-relaxed border-t border-white/5">
-              졸업 프로젝트를 하고 있는 인천대학교, 경희대학교 재학생 2인입니다!
+              졸업 프로젝트를 하고 있는 인천대학교 4학년, 경희대학교 4학년 재학생 입니다!
             </div>
           </details>
 
           <details className="group bg-white/[0.03] border border-white/5 rounded-2xl overflow-hidden">
             <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/[0.05] transition-colors">
               <span className="font-bold">
-                <span className="text-primary mr-3">02.</span> 이걸 왜 하나?
+                <span className="text-primary mr-3">02.</span> 이걸 왜 하나요?
               </span>
               <svg className="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div className="p-6 pt-0 text-zinc-400 leading-relaxed border-t border-white/5">
-              졸업 프로젝트에 실제 이용자들의 데이터가 필요합니다.
+              어떤 중고차를 사야할지 모르겠는데, 딜러에 의존할 수 밖에 없는 구조를 바꾸고자 합니다! 이에 프로젝트에 대한 실제 이용자들의 데이터가 필요합니다.
             </div>
           </details>
 
