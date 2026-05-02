@@ -301,7 +301,10 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-12 px-6">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center text-center">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-4">
+          <p className="text-zinc-500 text-xs break-keep">
+            본 사이트는 커뮤니티 댓글로만 홍보를 하고 있으며, 각종 포털을 통한 검색은 지원하지 않습니다.
+          </p>
           <p className="text-zinc-600 text-[10px] uppercase tracking-widest font-bold">
             © 2026 CLAI: CAR LINK AI. AUTOMOTIVE INTELLIGENCE.
           </p>
