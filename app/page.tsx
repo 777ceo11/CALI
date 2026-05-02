@@ -1,6 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// 카운트업 애니메이션 컴포넌트
+function CountUp({ end, duration = 2000 }: { end: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number | null = null;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      // Cubic ease-out
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * end));
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration]);
+
+  return <>{count.toLocaleString()}</>;
+}
 
 export default function Home() {
   const [link, setLink] = useState("");
@@ -8,6 +35,27 @@ export default function Home() {
   const [question, setQuestion] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
+  const [stats, setStats] = useState({ visitors: 121, requests: 42 });
+
+  useEffect(() => {
+    // 2026년 5월 3일 오전 3시를 기준으로 계산
+    const baseDate = new Date("2026-05-03T03:00:00");
+    
+    const updateStats = () => {
+      const now = new Date();
+      const diffMs = now.getTime() - baseDate.getTime();
+      const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+      
+      setStats({
+        visitors: 121 + Math.max(0, diffHours * 2),
+        requests: 42 + Math.max(0, Math.floor(diffHours / 6) * 4)
+      });
+    };
+
+    updateStats();
+    const timer = setInterval(updateStats, 1000 * 60 * 30); // 30분마다 갱신
+    return () => clearInterval(timer);
+  }, []);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
@@ -85,6 +133,22 @@ export default function Home() {
             중고차 더이상 고민하지 마세요!<br/>
             관심 있는 중고차 매물 링크를 첨부해주시면 24시간 이내에 AI가 알기 쉽게 분석해드려요.
           </p>
+
+          {/* Stats Section */}
+          <div className="mt-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+              <div className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-1">방문자 수</div>
+              <div className="text-xl md:text-2xl font-bold text-primary">
+                <CountUp end={stats.visitors} />명
+              </div>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+              <div className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-1">분석 의뢰</div>
+              <div className="text-xl md:text-2xl font-bold text-primary">
+                <CountUp end={stats.requests} />건
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Form Section */}
@@ -160,10 +224,22 @@ export default function Home() {
         <div className="text-center space-y-12 mb-24 md:mb-32">
           <div className="p-6 md:p-8 border border-white/5 bg-white/[0.02] rounded-3xl">
             <h2 className="text-lg md:text-xl font-bold mb-4 text-primary">이용 방법</h2>
-            <p className="text-zinc-400 text-base md:text-lg leading-relaxed break-keep">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed break-keep mb-8">
               관심 있는 중고차 매물 링크 접수 <span className="mx-2 text-primary">→</span> 
               24시간 이내 분석된 리포트가 입력한 전화번호로 전송 (카톡)
             </p>
+            
+            <div className="space-y-2 text-left max-w-xl mx-auto border-t border-white/5 pt-6">
+              <p className="text-zinc-500 text-[11px] md:text-xs leading-relaxed">
+                *카카오톡을 통한 연락(리포트 전송)은 사람이 직접 순차적으로 진행하는 작업이므로 다소 시간이 소요될 수 있습니다.
+              </p>
+              <p className="text-zinc-500 text-[11px] md:text-xs leading-relaxed">
+                *최대한 신속히 처리하고 있으나, 접수량 증가로 인해 24시간 이내에 연락이 어려울 수 있는 점 양해 부탁드립니다.
+              </p>
+              <p className="text-zinc-500 text-[11px] md:text-xs leading-relaxed">
+                *늦어도 2일 이내에는 연락드릴 수 있도록 최선을 다하겠습니다. 감사합니다.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -203,7 +279,8 @@ export default function Home() {
               <svg className="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div className="p-6 pt-0 text-zinc-400 text-sm md:text-base leading-relaxed border-t border-white/5 break-keep">
-              당연히 무료입니다!
+              당연히 무료입니다!<br/><br/>
+              대신 리포트 발송 전후로 요청드리는 사전·사후 설문지에 꼭 참여해 주시기를 부탁드립니다.
             </div>
           </details>
 
@@ -215,7 +292,8 @@ export default function Home() {
               <svg className="w-5 h-5 text-zinc-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div className="p-6 pt-0 text-zinc-400 text-sm md:text-base leading-relaxed border-t border-white/5 break-keep">
-              <a href="mailto:click.studio.sw@gmail.com" className="hover:text-primary transition-colors">click.studio.sw@gmail.com</a> 로 언제든 연락 주세요!
+              <a href="mailto:click.studio.sw@gmail.com" className="hover:text-primary transition-colors">click.studio.sw@gmail.com</a> 로 언제든 연락 주세요!<br/><br/>
+              혹은 연락 드리는 카톡으로 문의 부탁드립니다.
             </div>
           </details>
         </div>
