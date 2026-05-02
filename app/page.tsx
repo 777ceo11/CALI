@@ -284,7 +284,7 @@ export default function Home() {
             </summary>
             <div className="p-6 pt-0 text-zinc-400 text-sm md:text-base leading-relaxed border-t border-white/5 break-keep">
               당연히 무료입니다!<br/><br/>
-              대신 리포트 발송 전후로 요청드리는 사전·사후 설문지에 꼭 참여해 주시기를 부탁드립니다.
+              대신 리포트 발송 전후로 요청드리는 사전·사후 설문지에 꼭 참여해 주시기를 간곡히 부탁드립니다.
             </div>
           </details>
 
