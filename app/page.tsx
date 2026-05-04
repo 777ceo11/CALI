@@ -271,7 +271,7 @@ export default function Home() {
             <div className="space-y-3 text-left max-w-xl mx-auto border-t border-zinc-200 pt-6">
               <p className="text-zinc-700 text-[12px] md:text-sm leading-relaxed font-bold bg-zinc-100/50 p-4 rounded-2xl border border-zinc-200 mb-2">
                 🔥리포트 발송 이후에 서비스 후기 수집을 위해 간략한 사후 설문지가 준비되어 있으니, 부담 없이 응해주시길 간곡히 부탁드립니다..!!<br/>
-                <span className="text-[11px] md:text-xs font-medium text-zinc-500 mt-1 block">(어떠한 금전적 보상보다 이용자 여러분의 후기 수집이 프로젝트에 정말 큰 도움이 됩니다!!)</span>🔥
+                <span className="text-[11px] md:text-xs font-medium text-zinc-500 mt-1 block">(어떠한 금전적 보상보다 이용자 여러분의 후기 수집이 프로젝트에 정말 큰 도움이 됩니다!!)</span>
               </p>
               <p className="text-zinc-400 text-[11px] md:text-xs leading-relaxed">
                 *카카오톡을 통한 연락(리포트 전송)은 사람이 직접 순차적으로 진행하는 작업이므로 다소 시간이 소요될 수 있습니다.
@@ -394,10 +394,20 @@ export default function Home() {
               <svg className="w-5 h-5 text-zinc-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div className="p-6 pt-0 text-zinc-600 text-sm md:text-base leading-relaxed border-t border-zinc-100 break-keep">
-              <a href="mailto:click.studio.sw@gmail.com" className="hover:text-primary transition-colors">click.studio.sw@gmail.com</a> 로 언제든 연락 주세요!<br/><br/>
-              혹은 연락 드리는 카톡으로 문의 부탁드립니다.
+              리포트 발송 시 연락드리는 전화번호 혹은 페이지 하단 카카오톡 오픈채팅 바로가기 버튼을 이용해주세요!
             </div>
           </details>
+
+          {/* Open Chat Button */}
+          <a 
+            href="https://open.kakao.com/o/se5F8tti" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-8 flex items-center justify-center gap-2 w-full py-4 bg-primary text-white font-bold rounded-2xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+            오픈채팅 문의하기
+          </a>
         </div>
       </main>
 
