@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
-  --primary: #2DFE81;
+  --background: #ffffff;
+  --foreground: #09090b;
+  --primary: #2563eb;
 }
 
 @theme inline {
@@ -22,10 +22,10 @@ body {
 
 /* Custom glow effect */
 .glow {
-  box-shadow: 0 0 20px rgba(45, 254, 129, 0.15);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.1);
 }
 
 .glow-focus:focus-within {
-  box-shadow: 0 0 30px rgba(45, 254, 129, 0.3);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.2);
   border-color: var(--primary);
 }
