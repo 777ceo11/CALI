@@ -248,10 +248,16 @@ export default function Home() {
         <div className="text-center space-y-12 mb-24 md:mb-32">
           <div className="p-6 md:p-8 border border-zinc-100 bg-zinc-50 rounded-3xl">
             <h2 className="text-lg md:text-xl font-bold mb-4 text-primary">이용 방법</h2>
-            <p className="text-zinc-600 text-base md:text-lg leading-relaxed break-keep mb-8">
-              관심 있는 중고차 매물 링크 접수 <span className="mx-2 text-primary">→</span> 
-              24시간 이내 분석된 리포트가 입력한 전화번호로 전송 (카톡)
-            </p>
+            <div className="space-y-3 text-zinc-600 text-base md:text-lg leading-relaxed break-keep mb-8 inline-block text-left">
+              <p className="flex items-start">
+                <span className="font-bold text-primary mr-3">1.</span>
+                <span>관심 있는 중고차 매물 링크 접수</span>
+              </p>
+              <p className="flex items-start">
+                <span className="font-bold text-primary mr-3">2.</span>
+                <span>24시간 이내 분석된 리포트가 입력한 전화번호로 전송 (카카오톡)</span>
+              </p>
+            </div>
             
             <div className="space-y-2 text-left max-w-xl mx-auto border-t border-zinc-200 pt-6">
               <p className="text-zinc-400 text-[11px] md:text-xs leading-relaxed">
