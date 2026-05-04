@@ -267,6 +267,60 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Reviews Section */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <details className="group bg-blue-50/50 border border-blue-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+            <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-blue-100/50 transition-colors">
+              <span className="font-bold text-sm md:text-base text-blue-700 flex items-center gap-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                </div>
+                이용 후기 보러가기
+              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-blue-400 group-open:hidden">펼쳐보기</span>
+                <svg className="w-5 h-5 text-blue-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+              </div>
+            </summary>
+            <div className="p-6 pt-2 text-zinc-600 text-sm md:text-base leading-relaxed border-t border-blue-100/50 break-keep space-y-6">
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"택시 사용 이력의 경우, 실제 엔카에서 직접 확인한 내용과 더불어 개인 명의로 출고된 사실까지 명확하게 짚어주셔서 신뢰도가 높다고 느꼈습니다. 해당 내용이 리포트에도 잘 반영되어 있어 안심하고 참고할 수 있었습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***7님</p>
+              </div>
+
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"차량 점수가 함께 제시되는 점이 좋았습니다. 단순 정보 나열이 아니라 구매 결정에 실질적으로 도움이 되는 기준이 되어주었습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***2님</p>
+              </div>
+
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"재고 기간까지 분석해주신 부분이 인상적이었습니다. 보통은 잘 다루지 않는 요소인데, 매물의 상태나 시장 상황을 판단하는 데 유용했습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***5님</p>
+              </div>
+
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"후보군에서 제외해야 할 경우에 대한 가이드도 있어 판단에 도움이 되었고, 매물 전체에 대한 총점을 매겨주어 ‘살 만한 매물인지’를 직관적으로 파악할 수 있는 점이 특히 좋았습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***9님</p>
+              </div>
+
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"이 리포트는 단순 조회용이 아니라, 실제로 차량 구매를 고민하는 사람들에게 결정적인 도움을 주는 자료라고 느꼈습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***1님</p>
+              </div>
+
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"보험 이력을 반영해 시세를 산정해주는 점도 현실적인 판단에 큰 도움이 되었습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***4님</p>
+              </div>
+
+              <div className="bg-white/60 p-4 rounded-xl border border-blue-50">
+                <p className="mb-2 italic">"명의 변경 횟수뿐만 아니라 마지막 변경 이후 경과 기간까지 확인해주는 부분도 매우 유용했습니다. 보통은 단순 횟수만 보고 넘어가는데, 이 부분까지 확인할 수 있어 차량 이력을 더 깊이 이해할 수 있었습니다."</p>
+                <p className="text-xs text-zinc-400 font-bold text-right">– ***6님</p>
+              </div>
+            </div>
+          </details>
+        </div>
+
         {/* Toggles / FAQ */}
         <div className="space-y-4 max-w-2xl mx-auto">
           <h3 className="text-zinc-400 uppercase tracking-widest text-xs font-bold mb-6 italic">Knowledge Base</h3>
