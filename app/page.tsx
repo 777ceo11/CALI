@@ -267,10 +267,6 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="text-primary text-xs text-center mb-12 break-keep font-medium">
-          본 사이트는 커뮤니티 댓글로만 홍보를 하고 있으며, 각종 포털을 통한 검색은 지원하지 않습니다.
-        </p>
-
         {/* Toggles / FAQ */}
         <div className="space-y-4 max-w-2xl mx-auto">
           <h3 className="text-zinc-400 uppercase tracking-widest text-xs font-bold mb-6 italic">Knowledge Base</h3>
