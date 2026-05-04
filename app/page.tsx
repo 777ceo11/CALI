@@ -248,7 +248,7 @@ export default function Home() {
         <div className="text-center space-y-12 mb-24 md:mb-32">
           <div className="p-6 md:p-8 border border-zinc-100 bg-zinc-50 rounded-3xl">
             <h2 className="text-lg md:text-xl font-bold mb-4 text-primary">이용 방법</h2>
-            <div className="space-y-3 text-zinc-600 text-base md:text-lg leading-relaxed break-keep mb-8 inline-block text-left">
+            <div className="space-y-4 text-zinc-600 text-base md:text-lg leading-relaxed break-keep mb-8 inline-block text-left">
               <p className="flex items-start">
                 <span className="font-bold text-primary mr-3">1.</span>
                 <span>관심 있는 중고차 매물 링크 접수</span>
@@ -257,9 +257,22 @@ export default function Home() {
                 <span className="font-bold text-primary mr-3">2.</span>
                 <span>24시간 이내 분석된 리포트가 입력한 전화번호로 전송 (카카오톡)</span>
               </p>
+              <div className="flex flex-col">
+                <p className="flex items-start">
+                  <span className="font-bold text-primary mr-3">3.</span>
+                  <span>리포트 발송 전후로 요청드리는 사전·사후 설문지 참여</span>
+                </p>
+                <p className="text-zinc-400 text-[10px] md:text-xs ml-7 mt-1">
+                  *사전 설문지가 완료되지 않을 경우 리포트 발송은 이루어지지 않습니다.
+                </p>
+              </div>
             </div>
             
-            <div className="space-y-2 text-left max-w-xl mx-auto border-t border-zinc-200 pt-6">
+            <div className="space-y-3 text-left max-w-xl mx-auto border-t border-zinc-200 pt-6">
+              <p className="text-zinc-700 text-[12px] md:text-sm leading-relaxed font-bold bg-zinc-100/50 p-4 rounded-2xl border border-zinc-200 mb-2">
+                🔥리포트 발송 이후에 서비스 후기 수집을 위해 간략한 사후 설문지가 준비되어 있으니, 부담 없이 응해주시길 간곡히 부탁드립니다..!!<br/>
+                <span className="text-[11px] md:text-xs font-medium text-zinc-500 mt-1 block">(어떠한 금전적 보상보다 이용자 여러분의 후기 수집이 프로젝트에 정말 큰 도움이 됩니다!!)</span>🔥
+              </p>
               <p className="text-zinc-400 text-[11px] md:text-xs leading-relaxed">
                 *카카오톡을 통한 연락(리포트 전송)은 사람이 직접 순차적으로 진행하는 작업이므로 다소 시간이 소요될 수 있습니다.
               </p>
