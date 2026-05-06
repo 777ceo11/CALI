@@ -287,17 +287,19 @@ export default function Home() {
         </div>
 
         {/* Reviews Section */}
-        <div className="max-w-2xl mx-auto mb-12 space-y-4">
+        <div className="max-w-2xl mx-auto mb-12 space-y-4 text-left">
+          <h3 className="text-zinc-400 uppercase tracking-widest text-[10px] md:text-xs font-bold italic ml-2">이용후기</h3>
+          
           {/* Always Visible Reviews */}
           <div className="bg-blue-50/30 border border-blue-100/50 rounded-3xl p-6 md:p-8 space-y-6">
             <div className="bg-white/80 p-5 rounded-2xl border border-blue-50 shadow-sm">
-              <p className="mb-3 italic text-zinc-700 text-base md:text-lg leading-relaxed">"이 리포트는 단순 조회용이 아니라, 실제로 차량 구매를 고민하는 사람들에게 결정적인 도움을 주는 자료라고 느꼈습니다."</p>
-              <p className="text-sm text-zinc-400 font-bold text-right">– ***1님</p>
+              <p className="mb-2 italic text-zinc-600 text-sm md:text-base leading-relaxed">"이 리포트는 단순 조회용이 아니라, 실제로 차량 구매를 고민하는 사람들에게 결정적인 도움을 주는 자료라고 느꼈습니다."</p>
+              <p className="text-xs text-zinc-400 font-bold text-right">– ***1님</p>
             </div>
 
             <div className="bg-white/80 p-5 rounded-2xl border border-blue-50 shadow-sm">
-              <p className="mb-3 italic text-zinc-700 text-base md:text-lg leading-relaxed">"재고 기간까지 분석해주신 부분이 인상적이었습니다. 보통은 잘 다루지 않는 요소인데, 매물의 상태나 시장 상황을 판단하는 데 유용했습니다."</p>
-              <p className="text-sm text-zinc-400 font-bold text-right">– ***5님</p>
+              <p className="mb-2 italic text-zinc-600 text-sm md:text-base leading-relaxed">"재고 기간까지 분석해주신 부분이 인상적이었습니다. 보통은 잘 다루지 않는 요소인데, 매물의 상태나 시장 상황을 판단하는 데 유용했습니다."</p>
+              <p className="text-xs text-zinc-400 font-bold text-right">– ***5님</p>
             </div>
           </div>
 
