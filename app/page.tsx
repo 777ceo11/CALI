@@ -235,7 +235,7 @@ export default function Home() {
             </p>
             <div className="bg-white/50 p-4 rounded-xl space-y-1 inline-block min-w-[200px]">
               <p>최초 1회: <span className="text-blue-600 font-bold">무료</span></p>
-              <p>이후 1건 당: <span className="text-blue-600 font-bold">900원</span></p>
+              <p>이후 1건 당: <span className="text-blue-600 font-bold">2,000원</span></p>
             </div>
             <p className="text-zinc-600 text-xs md:text-sm pt-2">
               *결제 방법은 접수하신 후 작성해주신 전화번호를 통해 안내드리겠습니다.<br/>
@@ -377,7 +377,7 @@ export default function Home() {
             </summary>
             <div className="p-6 pt-0 text-zinc-600 text-sm md:text-base leading-relaxed border-t border-zinc-100 break-keep space-y-4">
               <p>본 프로젝트는 본래 무료로 진행하던 서비스였으나, 최근 분석 의뢰 증가로 인해 사비로 진행하던 ai비용 감당이 어려워져 최초 1회만 무료로 분석이 가능함을 알려드립니다.<br/>
-              최초 1회 무료 이후에는 1건당 최소한의 비용(900원)이 부과됩니다.</p>
+              최초 1회 무료 이후에는 1건당 최소한의 비용(2,000원)이 부과됩니다.</p>
               
               <p>최초 무료로 진행되는 리포트의 경우, 발송 전후로 요청드리는 사전·사후 설문지에 꼭 참여해 주시기를 간곡히 부탁드립니다.</p>
               
