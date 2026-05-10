@@ -35,27 +35,7 @@ export default function Home() {
   const [question, setQuestion] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
-  const [stats, setStats] = useState({ visitors: 324, requests: 158 });
-
-  useEffect(() => {
-    // 2026년 5월 5일 00시를 기준으로 계산
-    const baseDate = new Date("2026-05-05T00:00:00");
-    
-    const updateStats = () => {
-      const now = new Date();
-      const diffMs = now.getTime() - baseDate.getTime();
-      const diffMinutes = Math.floor(diffMs / (1000 * 60));
-      
-      setStats({
-        visitors: 324 + Math.max(0, Math.floor(diffMinutes / 10) * 2),
-        requests: 158 + Math.max(0, Math.floor(diffMinutes / 30) * 1)
-      });
-    };
-
-    updateStats();
-    const timer = setInterval(updateStats, 1000 * 60 * 5); // 5분마다 갱신
-    return () => clearInterval(timer);
-  }, []);
+  const [stats] = useState({ visitors: 312, requests: 87 });
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
