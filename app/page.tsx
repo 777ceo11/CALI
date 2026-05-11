@@ -35,7 +35,7 @@ export default function Home() {
   const [question, setQuestion] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
-  const [stats] = useState({ visitors: 312, requests: 87 });
+  const [stats] = useState({ visitors: 436, requests: 89 });
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
