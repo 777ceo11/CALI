@@ -2,32 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-// 카운트업 애니메이션 컴포넌트
-function CountUp({ end, duration = 2000 }: { end: number; duration?: number }) {
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    let startTime: number | null = null;
-    let animationFrame: number;
-
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      // Cubic ease-out
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(easeOut * end));
-      
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]);
-
-  return <>{count.toLocaleString()}</>;
-}
 
 export default function Home() {
   const [link, setLink] = useState("");
@@ -35,7 +10,7 @@ export default function Home() {
   const [question, setQuestion] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
-  const [stats] = useState({ visitors: 436, requests: 89 });
+
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9]/g, ""); // 숫자만 남기기
@@ -117,18 +92,39 @@ export default function Home() {
             관심 있는 중고차 매물 링크를 첨부해주시면 24시간 이내에 AI가 알기 쉽게 분석해드려요.
           </p>
 
-          {/* Stats Section */}
-          <div className="mt-10 grid grid-cols-2 gap-4 max-w-sm mx-auto">
-            <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-4">
-              <div className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest mb-1">방문자 수</div>
-              <div className="text-xl md:text-2xl font-bold text-primary">
-                <CountUp end={stats.visitors} />명
-              </div>
-            </div>
-            <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-4">
-              <div className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest mb-1">분석 의뢰</div>
-              <div className="text-xl md:text-2xl font-bold text-primary">
-                <CountUp end={stats.requests} />건
+          {/* Service Interruption Notice */}
+          <div className="mt-10 max-w-2xl mx-auto border-2 border-blue-500 rounded-3xl p-8 bg-blue-50/50 backdrop-blur-sm shadow-xl shadow-blue-500/10 text-left">
+            <h2 className="text-xl font-bold text-blue-700 mb-6 flex items-center gap-2">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              [공지사항]
+            </h2>
+            <div className="space-y-6 text-zinc-800 text-sm md:text-base leading-relaxed break-keep">
+              <p className="font-bold text-lg text-zinc-900">
+                예상치 못한 서비스 장애가 발생하여 부득이하게 서비스를 일시 중단하게 되었습니다.
+              </p>
+              
+              <p>
+                보다 안정적이고 개선된 서비스를 제공해드리기 위해<br/>
+                <span className="text-blue-600 font-bold underline underline-offset-4 decoration-blue-200">2026년 5월 13일 ~ 5월 20일</span> 기간동안 서비스 리뉴얼을 진행할 예정입니다.
+              </p>
+
+              <p className="bg-white/60 p-4 rounded-2xl border border-blue-100">
+                이에 따라 <span className="font-bold">5월 12일 00시~24시 사이 접수된 리포트</span>는<br/>
+                리뉴얼 종료 이후인 <span className="text-blue-600 font-bold">5월 20일부터 순차적으로 발송</span>될 예정입니다.
+              </p>
+
+              <p className="text-zinc-600">
+                또한 리뉴얼 기간 동안에는 접수가 정상적으로 진행되지 않으며,<br/>
+                <span className="text-red-500 font-medium">접수 완료 화면이 표시되더라도 실제 접수는 이루어지지 않는 점</span> 양해 부탁드립니다.
+              </p>
+
+              <div className="pt-4 border-t border-blue-100 mt-6">
+                <p>
+                  그동안 Plate AI를 이용해주신 모든 분들께 진심으로 감사드리며,<br/>
+                  더 나은 모습으로 다시 찾아뵙겠습니다.
+                </p>
+                <p className="mt-4 font-bold">감사합니다.</p>
+                <p className="mt-2 text-zinc-400 text-xs">-2026년 5월 13일 운영진 일동-</p>
               </div>
             </div>
           </div>
@@ -203,26 +199,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Pricing Notice Section */}
-        <div className="max-w-2xl mx-auto mb-16 p-6 md:p-8 bg-blue-50 border border-blue-100 rounded-3xl text-zinc-900">
-          <h2 className="text-lg font-bold mb-4 text-blue-700 flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            알려드립니다.
-          </h2>
-          <div className="space-y-4 text-sm md:text-base leading-relaxed">
-            <p className="font-medium">
-              본 서비스는 본래 무료였으나, 최근 분석 의뢰 급증으로 인한 토큰 비용 감당을 위해 요금제가 변경되었습니다.
-            </p>
-            <div className="bg-white/50 p-4 rounded-xl space-y-1 inline-block min-w-[200px]">
-              <p>최초 1회: <span className="text-blue-600 font-bold">무료</span></p>
-              <p>이후 1건 당: <span className="text-blue-600 font-bold">2,000원</span></p>
-            </div>
-            <p className="text-zinc-600 text-xs md:text-sm pt-2">
-              *결제 방법은 접수하신 후 작성해주신 전화번호를 통해 안내드리겠습니다.<br/>
-              감사합니다.
-            </p>
-          </div>
-        </div>
+
 
         {/* Description Section */}
         <div className="text-center space-y-12 mb-24 md:mb-32">
